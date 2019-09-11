@@ -1,0 +1,9 @@
+export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const ADD_DISCOUNT = 'ADD_DISCOUNT';
+export const GET_DISCOUNTS = 'GET_DISCOUNT';
+export const UPDATE_DISCOUNT = 'UPDATE_DISCOUNT';
+export const DELETE_DISCOUNT = 'DELETE_DISCOUNT';
+export const EDIT_DISCOUNT_DATA = 'EDIT_DISCOUNT_DATA';
+export const LOADING = 'LOADING';
