@@ -7,6 +7,7 @@ import Landing from './components/pages/Landing';
 import Login from './components/auth/Login';
 import PrivateRoute from './components/common/PrivateRoute';
 import Dashboard from './components/dashboard';
+import ConfirmPayment from './components/pages/ConfirmPayment';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 				<Switch>
 					<PrivateRoute exact path="/dashboard" component={Dashboard} />
 				</Switch>
+				<Route exact path="/payment" component={ConfirmPayment} />
 			</Router>
 		</Provider>
 	);

@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+p {
+	color: #626262;
+}
+
+/* body {
+	overflow: hidden;
+} */
+
 .nav {
-	background: #fafafa;
+	background: #24a44d;
+	height: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .logo {
-	padding-left: 50px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width: 100%;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	background: #fafafa;
 	display: inline-flex;
+	border-radius: 3px;
 }
 
 .logo img {
-	width: 100px;
+	width: 75px;
+}
+
+.spinner {
+	text-align: center;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 30px 50px;
+	margin: 20px 0;
 }
 
 .logout-btn {
-	width: 100%;
-	margin-right: 50px;
+	margin-right: 2rem;
 }
 
 h1.hero-text {
@@ -26,6 +48,13 @@ h1.hero-text {
 	font-size: 3rem;
 	font-weight: bold;
 	font-family: 'Roboto', sans-serif;
+}
+
+.card-select {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .table {
@@ -46,15 +75,31 @@ h1.hero-text {
 	padding-right: 3rem;
 }
 
+.card-header-text {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 37px;
+	color: #36af5a;
+}
+
 .r-side-card {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-	height: 80vh;
+	/* height: 80vh; */
+	min-height: calc(100vh - 4rem);
 	width: 100%;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
+
+/* .right-side {
+	height: 100%;
+	overflow-x: auto;
+} */
 
 p.lead {
 	color: #ccc;
@@ -63,6 +108,16 @@ p.lead {
 
 .cover {
 	height: 100vh;
+}
+
+.steps-action-btn {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: space-between;
+	width: 100%;
+	margin-bottom: 20px;
 }
 
 div.caption {
@@ -90,21 +145,36 @@ div.caption {
 	background: #fff;
 	color: #f3f7f7;
 	border-Radius: 6px;
-	box-shadow: rgba(115, 143, 147, 0.3)0px 14px 28px 0px;
+	min-width: 100%;
+	margin: 10px;
+}
+
+.step {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.card-select-container {
+	background: #f9f9f9;
+	color: #f3f7f7;
+	border-Radius: 6px;
+	min-width: 100%;
+	padding: 10px;
+	margin-bottom: 5px;
 }
 
 .landing-maincontainer {
-	background: url('./assets/landing.jpg') no-repeat;
+	background: url('./assets/bgvector.svg') no-repeat;
 	background-size: cover;
 	background-position: center;
-	height: 100vh;
+	height: calc(100vh - 3rem);
 }
 
-.categories .ant-card-body {
+.item-container .ant-card-body {
 	padding: 10px;
 }
 
-.categories .ant-card-body:hover {
+.item-container .ant-card-body:hover {
 	border: 2px solid #ccc;
 }
 
@@ -121,6 +191,23 @@ div.caption {
 	margin-bottom: 20px;
 }
 
+.discount-item {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 14px;
+	margin-bottom: 3px;
+	border-radius: 5px;
+	background: #f7f7f7;
+}
+
+.discount-item-text {
+	font-size: 19px;
+	line-height: 28px;
+	margin: 0;
+	letter-spacing: normal;
+	text-align: start;
+}
+
 /* form styles */
 .ant-advanced-search-form {
 	padding: 24px;
@@ -135,4 +222,49 @@ div.caption {
 
 .ant-advanced-search-form .ant-form-item-control-wrapper {
 	flex: 1;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 700px) {
+	.logo img {
+		width: 70px;
+	}
+	.nav {
+		height: 2.5rem;
+	}
+	h1.hero-text {
+		margin-top: 1rem;
+		font-size: 2rem;
+	}
+	p.lead {
+		margin-top: -1.5rem;
+		font-size: 1rem;
+	}
+	.step {
+		display: none !important;
+	}
+	.r-side-card {
+		min-height: 5rem;
+		height: auto;
+		width: 100%;
+		padding-left: 0.8rem;
+		padding-right: 0.8rem;
+	}
+	div.caption {
+		min-height: 5rem;
+		margin: 3px;
+	}
+	.landing-maincontainer {
+		height: 10rem;
+	}
+
+	.card-header-text {
+		margin-top: 1rem;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	.item-container .ant-card-body {
+		padding: 5px;
+	}
 }

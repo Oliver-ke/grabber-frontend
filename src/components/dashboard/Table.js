@@ -20,12 +20,24 @@ const DiscountTable = ({ discount, getDiscount, deleteDiscount, editData }) => {
 			title: 'Price',
 			dataIndex: 'price',
 			key: 'price',
-			render: (text) => <a>₦{text}</a>
+			render: (text) => <a href="#!">₦{text}</a>
 		},
 		{
 			title: 'Discount',
 			dataIndex: 'discount',
 			key: 'discount',
+			render: (value) => <span>{`${value}%`}</span>
+		},
+		{
+			title: 'Imp Cost',
+			dataIndex: 'implementationCost',
+			key: 'implementationCost',
+			render: (text) => <a href="#!">₦{text}</a>
+		},
+		{
+			title: 'Imp Discount',
+			dataIndex: 'implementationDiscount',
+			key: 'implementationDiscount',
 			render: (value) => <span>{`${value}%`}</span>
 		},
 		{
@@ -82,11 +94,6 @@ const DiscountTable = ({ discount, getDiscount, deleteDiscount, editData }) => {
 						Edit
 					</a>
 					<Divider type="vertical" />
-					{/* <Popconfirm title="Sure to delete?" onConfirm={deleteDiscount(record.id)}>
-						<a href="#!" style={{ color: 'red' }}>
-							Delete
-						</a>
-					</Popconfirm> */}
 					<a onClick={() => deleteDiscount(record.id)} href="#!" style={{ color: 'red' }}>
 						Delete
 					</a>

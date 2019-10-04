@@ -2,20 +2,22 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import NavBar from '../common/Navbar';
 import Hero from '../common/Hero';
-import CatContainer from '../discount/CatContainer';
+import DiscountContainer from '../discount/DiscountContainer';
 const Landing = () => {
 	return (
-		<Row align="middle" justify="center">
-			<Col span={24} className="landing-maincontainer">
-				<div className="overlay">
-					<NavBar />
-					<Row>
+		<Row>
+			<Col sm={24}>
+				<NavBar />
+			</Col>
+			<Col md={12} sm={24}>
+				<div className="landing-maincontainer">
+					<div className="overlay">
 						<Hero />
-						<Col xs={24} md={12}>
-							<CatContainer />
-						</Col>
-					</Row>
+					</div>
 				</div>
+			</Col>
+			<Col md={12} sm={24}>
+				<DiscountContainer />
 			</Col>
 		</Row>
 	);

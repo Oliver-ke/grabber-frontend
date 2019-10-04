@@ -8,10 +8,22 @@ const { Group: InputGroup } = Input;
 
 const EditForm = ({ updateDiscount, closeModal, cancel, discount }) => {
 	const { loading, editData } = discount;
-	const { price, discount: editDiscount, maxRange, minRange, category, fixed, id } = editData;
+	const {
+		price,
+		discount: editDiscount,
+		maxRange,
+		minRange,
+		category,
+		fixed,
+		id,
+		implementationCost,
+		implementationDiscount
+	} = editData;
 	const [ formInputs, setFormInputs ] = useState({
 		price,
 		discount: editDiscount,
+		implementationDiscount,
+		implementationCost,
 		maxRange,
 		minRange,
 		category,
@@ -51,25 +63,45 @@ const EditForm = ({ updateDiscount, closeModal, cancel, discount }) => {
 	return (
 		<Form {...formItemLayout} onSubmit={formSubmit}>
 			{error ? <Alert message={error} type="error" closable afterClose={() => setError('')} /> : null}
-			<Form.Item label="Price">
-				<Input
-					onChange={handleInput}
-					type="number"
-					value={formInputs.price}
-					name="price"
-					style={{ width: '80%' }}
-					placeholder="e.g 4569000"
-				/>
+			<Form.Item label="Price Offer">
+				<InputGroup>
+					<Input
+						onChange={handleInput}
+						type="number"
+						value={formInputs.price}
+						name="price"
+						style={{ width: '40%' }}
+						placeholder="e.g 4569000"
+					/>
+					<Input
+						type="number"
+						onChange={handleInput}
+						value={formInputs.discount}
+						name="discount"
+						style={{ width: '40%' }}
+						placeholder="% discount"
+					/>
+				</InputGroup>
 			</Form.Item>
-			<Form.Item label="Discount Percent">
-				<Input
-					type="number"
-					onChange={handleInput}
-					name="discount"
-					value={formInputs.discount}
-					style={{ width: '80%' }}
-					placeholder="e.g 10"
-				/>
+			<Form.Item label="Implementation">
+				<InputGroup>
+					<Input
+						onChange={handleInput}
+						type="number"
+						value={formInputs.implementationCost}
+						name="implementationCost"
+						style={{ width: '40%' }}
+						placeholder="amount"
+					/>
+					<Input
+						type="number"
+						onChange={handleInput}
+						value={formInputs.implementationDiscount}
+						name="implementationDiscount"
+						style={{ width: '40%' }}
+						placeholder="% discount"
+					/>
+				</InputGroup>
 			</Form.Item>
 			<Form.Item label="Range">
 				<InputGroup>

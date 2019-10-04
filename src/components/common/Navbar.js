@@ -5,15 +5,17 @@ import PropTypes from 'prop-types';
 import { logoutUser } from '../../actions/auth';
 import logo from '../../assets/logo.png';
 
-const Navbar = ({ logoutUser, auth }) => {
+const Navbar = ({ logoutUser, auth, location }) => {
 	const handleLogout = () => {
 		logoutUser();
 	};
-
+	console.log(location);
 	return (
-		<Col span={24} className="nav">
-			<div className="logo">
-				<img src={logo} alt="logo" />
+		<Col sm={24} md={auth.isAuthenticated ? 24 : 12}>
+			<div className="nav">
+				<div className="logo">
+					<img src={logo} alt="logo" />
+				</div>
 				{auth.isAuthenticated && (
 					<div className="logout-btn" style={{ textAlign: 'right' }}>
 						<Button onClick={handleLogout}>
